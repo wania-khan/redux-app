@@ -21,6 +21,7 @@ const listSlice = createSlice({
         deleteTask: (state, action) => {
             const updatedTasks = state.filter((_, index) => index !== action.payload);
             saveToLocalStorage(updatedTasks);
+            return updatedTasks;
         },
         toggleTaskCompletion: (state, action) => {
             const task = state[action.payload];
